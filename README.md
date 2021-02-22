@@ -1,3 +1,25 @@
+# About My project
+
+## On my project there is 6 routes
+## They are:
+1. '/' - **Home route**
+<img src = 'PortfolioImages/home.png' width = "200">
+
+2. '/about' - **About route**
+<img src = 'PortfolioImages/about.png' width = "200">
+
+3. '/services' - **Services route**
+<img src = 'PortfolioImages/services.png' width = "200">
+
+4. '/work' - **Work Route**
+<img src = 'PortfolioImages/work.png' width = "200">
+
+5. '/testimonials' - **Testimonials route**
+<img src = 'PortfolioImages/testimonials.png' width = "200">
+
+6. '/contact' - **Contacts route**
+<img src = 'PortfolioImages/contact.png' width = "200">
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

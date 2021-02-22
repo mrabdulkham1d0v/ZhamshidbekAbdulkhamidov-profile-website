@@ -25,6 +25,6 @@
             <h3>I am 2nd year student of SDU.</h3>
             <a href="about" class="btn">About Me</a>
         </div>
-    </section>    
+    </section> 
 </body>
 </html>
