@@ -11,7 +11,7 @@
         <a href="#" class="logo">Portfolio</a>
         <div class="toggle" onclick="toggleMenu();"></div>
         <ul class="menu ">
-            <li><a href="home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="{{ route('home')}}" onclick="toggleMenu();">Home</a></li>
             <li><a href="about" onclick="toggleMenu();">About</a></li>
             <li><a href="services" onclick="toggleMenu();">Services</a></li>
             <li><a href="work" onclick="toggleMenu();">Work</a></li>

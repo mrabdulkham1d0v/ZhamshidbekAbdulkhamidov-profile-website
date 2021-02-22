@@ -24,3 +24,7 @@ Route::get('/about', function () {
 Route::get('/services', function() {
     return view('services');
 })->name('services');
+
+Route::get('/work', function() {
+    return view('work');
+})->name('work');
