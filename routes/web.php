@@ -28,3 +28,11 @@ Route::get('/services', function() {
 Route::get('/work', function() {
     return view('work');
 })->name('work');
+
+Route::get('/testimonials', function() {
+    return view('testimonials');
+})-> name('testimonials');
+
+Route::get('/contact', function() {
+    return view('contact');
+})-> name('contact');
