@@ -1,6 +1,6 @@
 # About My project
 
-## On my project there is 6 routes
+## On my project there are many routes
 ## They are:
 1. '/' - **Home route**
 <img src = 'PortfolioImages/home.png' width = "200">
@@ -19,6 +19,11 @@
 
 6. '/contact' - **Contacts route**
 <img src = 'PortfolioImages/contact.png' width = "200">
+
+7. `/post/create` - Will add post to the database with defined **title** and **body**
+
+8. `/post` - Will return post from  the **Database**
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
