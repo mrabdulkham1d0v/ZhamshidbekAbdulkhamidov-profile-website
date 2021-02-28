@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +41,11 @@ Route::get('/testimonials', function() {
 Route::get('/contact', function() {
     return view('contact');
 })-> name('contact');
+
+Route::get('/post/create', function() {
+    DB::table('posts')->insert([
+        'title' => 'Practicum Experience',
+        'body' => 'To be honest, I would say that I was searching for any courses about data science'
+        ]
+    );
+});
