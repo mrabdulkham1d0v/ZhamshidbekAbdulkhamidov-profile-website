@@ -7,9 +7,11 @@
     <title>Create Blog</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="{{ route('add-post')}}" method="POST">
+        @csrf 
         <input type="text" name="title" placeholder="title">
         <input type="text" name="body" placeholder="body">
+        <button type="submit">Create</button>
     </form>
 </body>
 </html>
