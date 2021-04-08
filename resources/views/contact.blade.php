@@ -45,10 +45,12 @@
                 </div>
             </div>
             <div class="formBx">
-                <form action="">
+                <form method= "post" action="/contact">
                     <h3>Message Me</h3>
-                    <input type="text" name="" id="" placeholder="Full Name">
+                    <input type="text" name="" id="" placeholder="Name">
+                    <input type="text" name="" id="" placeholder="Surname">
                     <input type="email" name="" id="" placeholder="Type You Email">
+                    <input type="file" name="" id="" >
                     <textarea placeholder="Your Message..."></textarea>
                     <input type="submit" value="Send">
                 </form>

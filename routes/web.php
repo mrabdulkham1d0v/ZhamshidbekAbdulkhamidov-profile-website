@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Post;
+use App\Models\form;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\formController;
 
 
 /*
@@ -64,3 +66,7 @@ Route::get('/blog/create', function(){
 Route::post('/blog/create',[BlogController::class,'store'])->name('add-post');
 
 Route::get('/post/{id}', [BlogController::class,'get_post']);
+
+Route::post('/upload', [formController::class, 'submitForm']);
+Route::get('/upload', [formController::class, 'uploadForm']);
+Route::get('/show/users', [formController::class, 'showUsers']);
