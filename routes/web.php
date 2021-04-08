@@ -8,7 +8,7 @@ use App\Models\form;
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\formController;
-
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +70,5 @@ Route::get('/post/{id}', [BlogController::class,'get_post']);
 Route::post('/upload', [formController::class, 'submitForm']);
 Route::get('/upload', [formController::class, 'uploadForm']);
 Route::get('/show/users', [formController::class, 'showUsers']);
+
+Route::get('/send',[MailController::class,'send']);
