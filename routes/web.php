@@ -72,3 +72,13 @@ Route::get('/upload', [formController::class, 'uploadForm']);
 Route::get('/show/users', [formController::class, 'showUsers']);
 
 Route::get('/send',[MailController::class,'send']);
+
+Route::get('/{lang}',function($lang){
+    App::setlocale($lang);
+    return view('home');
+});
+
+Route::get('about/{lang}',function($lang){
+    App::setlocale($lang);
+    return view('about');
+});

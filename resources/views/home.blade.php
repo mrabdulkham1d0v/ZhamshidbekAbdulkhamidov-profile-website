@@ -11,19 +11,19 @@
         <a href="#" class="logo">Portfolio</a>
         <div class="toggle" onclick="toggleMenu();"></div>
         <ul class="menu ">
-            <li><a href="{{ route('home')}}" onclick="toggleMenu();">Home</a></li>
-            <li><a href="about" onclick="toggleMenu();">About</a></li>
-            <li><a href="services" onclick="toggleMenu();">Services</a></li>
-            <li><a href="work" onclick="toggleMenu();">Work</a></li>
-            <li><a href="testimonials" onclick="toggleMenu();">Testimonials</a></li>
-            <li><a href="contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="{{ route('home')}}" onclick="toggleMenu();">{{__('lang.home')}}</a></li>
+            <li><a href="about" onclick="toggleMenu();">{{__('lang.about')}}</a></li>
+            <li><a href="services" onclick="toggleMenu();">{{__('lang.services')}}</a></li>
+            <li><a href="work" onclick="toggleMenu();">{{__('lang.work')}}</a></li>
+            <li><a href="testimonials" onclick="toggleMenu();">{{__('lang.testimonials')}}</a></li>
+            <li><a href="contact" onclick="toggleMenu();">{{__('lang.contact')}}</a></li>
         </ul>
     </header>
     <section class="banner" id='home'>
         <div class="txtBx">
-            <h2>Hello, I am <br><span>Zhamshidbek.</span></h2>
-            <h3>I am 2nd year student of SDU.</h3>
-            <a href="about" class="btn">About Me</a>
+            <h2>{{__('lang.hello')}} <br><span>Zhamshidbek.</span></h2>
+            <h3>{{__('lang.student')}}.</h3>
+            <a href="about" class="btn">{{__('lang.aboutme')}}</a>
         </div>
     </section> 
 </body>
