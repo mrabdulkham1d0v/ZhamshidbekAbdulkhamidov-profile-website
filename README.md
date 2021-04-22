@@ -1,7 +1,8 @@
-# About My project
+# About project
 
-## On my project there are many routes
-## They are:
+## Project Description
+### In project there are many routes
+### They are:
 1. '/' - **Home route**
 <img src = 'PortfolioImages/home.png' width = "200">
 
@@ -20,8 +21,11 @@
 6. '/contact' - **Contacts route**
 <img src = 'PortfolioImages/contact.png' width = "200">
 
-### Project has an many functionality like that `email Sending`, `file uploading` and etc.
-### It has 2 tables which are `services-info` and `services-photo` they connects service-info.photoId = service-photo.id
 
+### Project has an many functionality like that `email Sending`, `file uploading` and etc.
+### It has 2 tables which are `services-info` and `services-photo` they connects by service-info.photoId = service-photo.id
+ <img src = 'PortfolioImages/erDiagram.png' width = "200"> 
 ### Project has localization for `English`,`Russian` and `Kazakh`
 
+## Project Purpose 
+#### Main purpose of project that CV for developer. And user can interact with developer easily. And there is also one more purpose marketing of developer's services.
