@@ -10,16 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class DemoEmail extends Mailable
 {    
     use Queueable, SerializesModels;
-    public $demo;
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($demo)
+    public function __construct($data)
     {
         //
-        $this->demo=$demo;
+        $this->data=$data;
     }
 
     /**
@@ -29,6 +29,8 @@ class DemoEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('190103308@stu.sdu.edu.kz')->view('mails.demo');
+        return $this->from('190103308@stu.sdu.edu.kz')->view('mails.demo')->attach($this->data['File']->getRealPath(), [
+            'as' => $this->data['File']->getClientOriginalName()
+        ]);
     }
 }

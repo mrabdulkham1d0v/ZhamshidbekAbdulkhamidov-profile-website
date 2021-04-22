@@ -9,6 +9,9 @@ use App\Models\form;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\languageController;
+use App\Http\Controllers\ServicesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,29 +24,41 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', function(){
+    return redirect(app()->getLocale());
+});
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-z]{2}'],
+    'middleware' => 'setlocale',
+], function() {
 
-Route::get('/services', function() {
-    return view('services');
-})->name('services');
 
-Route::get('/work', function() {
-    return view('work');
-})->name('work');
-
-Route::get('/testimonials', function() {
-    return view('testimonials');
-})-> name('testimonials');
-
-Route::get('/contact', function() {
-    return view('contact');
-})-> name('contact');
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+    
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+    
+    Route::get('/services', [ServicesController::class,'index'])->name('services');
+    
+    Route::get('/work', function() {
+        return view('work');
+    })->name('work');
+    
+    Route::get('/testimonials', function() {
+        return view('testimonials');
+    })-> name('testimonials');
+    
+    Route::get('/contact', function() {
+        return view('contact');
+    })-> name('contact');
+    
+}
+);
 
 Route::get('/post/create', function() {
     DB::table('posts')->insert([
@@ -71,12 +86,15 @@ Route::post('/upload', [formController::class, 'submitForm']);
 Route::get('/upload', [formController::class, 'uploadForm']);
 Route::get('/show/users', [formController::class, 'showUsers']);
 
-Route::get('/send',[MailController::class,'send']);
+Route::get('/send',[MailController::class,'view']);
+Route::post('/send',[MailController::class,'send']);
 
 Route::get('/{lang}',function($lang){
     App::setlocale($lang);
     return view('home');
 });
+
+Route::get('/{lang}',['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\languageController@switchLang']);
 
 Route::get('about/{lang}',function($lang){
     App::setlocale($lang);

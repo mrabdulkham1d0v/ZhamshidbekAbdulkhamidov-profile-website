@@ -1,6 +1,13 @@
 window.addEventListener('scroll', (e) =>{
-    const header = document.querySelector("header");
-    header.classList.toggle('sticky', window.scrollY > 0);
+    var header = document.querySelector("header");
+    //header.classList.toggle('sticky', window.scrollY > 0);
+    if(window.scrollY == 0){
+        // header.removeAttribute('display');
+        header.style.display = "flex";
+    }else if(window.scrollY >= 50){
+        // header.removeAttribute('display');
+        header.style.display = "none";
+    }
 });
 
 

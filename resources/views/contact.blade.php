@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = stylesheet href = "{{ asset('style.css') }}">
+    <link rel = stylesheet href = "{{ asset('css/style.css') }}">
     <title>Contacts</title>
 </head>
 <body>
+    <header>
+        <a href="#" class="logo">Portfolio</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu ">
+            <li><a href="{{ url(app()->getLocale())}}">{{__('lang.home')}}</a></li>
+            <li><a href="{{ url(app()->getLocale() . '/about')}}">{{__('lang.about')}}</a></li>
+            <li><a href="{{ url(app()->getLocale() . '/services')}}">{{__('lang.services')}}</a></li>
+            <li><a href="{{ url(app()->getLocale() . '/work')}}">{{__('lang.work')}}</a></li>
+            <li><a href="{{ url(app()->getLocale() . '/testimonials')}}">{{__('lang.testimonials')}}</a></li>
+            <li><a href="{{ url(app()->getLocale() . '/contact')}}">{{__('lang.contact')}}</a></li>
+            <li class="nav-item-dropdown">
+                <a class="nav-link-dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ Config::get('languages')[App::getLocale()] }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                @foreach (Config::get('languages') as $lang => $language)
+                    @if ($lang != App::getLocale())
+                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                    @endif
+                @endforeach
+                </div>
+            </li>
+        </ul>
+    </header>
     <section class="contact" id="contact">
         <div class="heading white">
             <h2>Contact Us</h2>
@@ -45,13 +69,14 @@
                 </div>
             </div>
             <div class="formBx">
-                <form method= "post" action="/contact">
+                <form method= "POST" action="{{url('/send')}}" enctype="multipart/form-data">
+                    @csrf
                     <h3>Message Me</h3>
-                    <input type="text" name="" id="" placeholder="Name">
-                    <input type="text" name="" id="" placeholder="Surname">
-                    <input type="email" name="" id="" placeholder="Type You Email">
-                    <input type="file" name="" id="" >
-                    <textarea placeholder="Your Message..."></textarea>
+                    <input type="text" name="Name" id="" placeholder="Name">
+                    <input type="text" name="Surname" id="" placeholder="Surname">
+                    <input type="email" name="Email" id="" placeholder="Type You Email">
+                    <input type="file" name="File" id="" >
+                    <textarea placeholder="Your Message..." name = "Message"></textarea>
                     <input type="submit" value="Send">
                 </form>
             </div>
@@ -60,5 +85,6 @@
     <div class="copyright">
         <p>Copyright© 2020 Portfolio. All rights Reserved.</p>
     </div>
+    <script src="{{asset('script.js')}}"></script>
 </body>
 </html>
